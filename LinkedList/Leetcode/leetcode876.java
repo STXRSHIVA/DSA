@@ -1,24 +1,22 @@
 package LinkedList.Leetcode;
 
+
+/**
+ * leetcode876
+ */
 public class leetcode876 {
-    int val;
-    leetcode876 next;
 
-    leetcode876() {
+    public static void main(String[] args) {
+
     }
 
-    leetcode876(int val) {
-        this.val = val;
-    }
-
-    leetcode876(int val, leetcode876 next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-class Solution {
-    public leetcode876 middleNode(Node head) {
-
+    public Node middleNode(Node head) {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }
